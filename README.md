@@ -68,6 +68,17 @@ npx allure open
 
 ---
 
+## 📄 Test Senaryoları
+
+Tüm manuel test senaryoları, ayrı ayrı Excel dosyaları olarak `test-documents/` klasörü altında tutulmaktadır.
+
+- `TestCase_HB_001`: Sepet ürün adedi güncelleme testi
+- `TestCase_HB_002`: Fiyat güncelleme uyarısı testi
+- `TestCase_HB_003`: Kampanyalı ürün fiyat kontrol testi
+- `TestCase_HB_004`: Ücretsiz kargo koşulları testi
+- `TestCase_HB_005`: Geçerli/geçersiz indirim kodu testi
+
+
 ## 📁 Dizin Yapısı
 
 ```
