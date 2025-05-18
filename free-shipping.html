@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Ücretsiz Kargo Testi</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .hidden { display: none; }
+    #cart { margin-top: 20px; border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Ürün Detay Sayfası</h1>
+<p id="shipping-info">Ücretsiz kargo 100 TL ve üzeri alışverişlerde geçerlidir</p>
+<p>Ürün: Defter</p>
+<p>Fiyat: 50 TL</p>
+<button id="addToCart">Sepete Ekle</button>
+
+<div id="cart" class="hidden">
+  <p>Ürün Sepete Eklendi</p>
+  <p>Adet: <span id="quantity">1</span></p>
+  <p>Toplam: <span id="total">50</span> TL</p>
+</div>
+
+<button id="refreshCart" class="hidden">Sepeti Yenile</button>
+<p id="shippingMessage" class="hidden"></p>
+
+<script>
+  let quantity = 1;
+  const cart = document.getElementById('cart');
+  const quantityEl = document.getElementById('quantity');
+  const totalEl = document.getElementById('total');
+  const refreshBtn = document.getElementById('refreshCart');
+  const shippingMessage = document.getElementById('shippingMessage');
+
+  document.getElementById('addToCart').addEventListener('click', () => {
+    cart.classList.remove('hidden');
+    refreshBtn.classList.remove('hidden');
+  });
+
+  refreshBtn.addEventListener('click', () => {
+    quantity++;
+    quantityEl.textContent = quantity;
+    const total = quantity * 50;
+    totalEl.textContent = total;
+    if (total >= 100) {
+      shippingMessage.textContent = "Kargo Bedava!";
+      shippingMessage.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>

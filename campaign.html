@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampanyalı Ürün Test Sayfası</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .strike { text-decoration: line-through; color: gray; }
+    .product, .cart { border: 1px solid #ccc; padding: 20px; margin-top: 20px; width: 300px; }
+  </style>
+</head>
+<body>
+
+  <h1>Ürün Detay</h1>
+  <div class="product">
+    <p><strong>Ürün:</strong> Spor Ayakkabı</p>
+    <p>
+      <span class="strike">300 TL</span>
+      <span id="discountPrice">200 TL</span>
+    </p>
+    <button id="addToCart">Sepete Ekle</button>
+  </div>
+
+  <div class="cart" id="cart" style="display: none;">
+    <h2>Sepet</h2>
+    <p><strong>Adet:</strong> <button id="decrease">-</button> <span id="quantity">1</span> <button id="increase">+</button></p>
+    <p><strong>Toplam Fiyat:</strong> <span id="total">200</span> TL</p>
+    <button id="checkout">Sepeti Onayla</button>
+  </div>
+
+  <script>
+    const addToCartBtn = document.getElementById('addToCart');
+    const cart = document.getElementById('cart');
+    const quantity = document.getElementById('quantity');
+    const total = document.getElementById('total');
+    const increaseBtn = document.getElementById('increase');
+    const decreaseBtn = document.getElementById('decrease');
+    const discount = 200;
+
+    let count = 1;
+
+    addToCartBtn.addEventListener('click', () => {
+      cart.style.display = 'block';
+      count = 1;
+      quantity.textContent = count;
+      total.textContent = count * discount;
+    });
+
+    increaseBtn.addEventListener('click', () => {
+      count++;
+      quantity.textContent = count;
+      total.textContent = count * discount;
+    });
+
+    decreaseBtn.addEventListener('click', () => {
+      if (count > 1) {
+        count--;
+        quantity.textContent = count;
+        total.textContent = count * discount;
+      }
+    });
+  </script>
+
+</body>
+</html>

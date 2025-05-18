@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <title>Test Sepet Sayfası</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .product { border: 1px solid #ccc; padding: 20px; width: 300px; }
+    .cart { margin-top: 30px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Test Ürünü</h1>
+
+  <div class="product">
+    <p><strong>Ürün:</strong> Çanta</p>
+    <p><strong>Fiyat:</strong> 100 TL</p>
+    <button id="addToCart">Sepete Ekle</button>
+  </div>
+
+  <div id="cart" class="cart hidden">
+    <h2>Sepet</h2>
+    <p>Adet: <button id="decrease">-</button> <span id="quantity">1</span> <button id="increase">+</button></p>
+    <p><strong>Toplam Fiyat:</strong> <span id="total">100</span> TL</p>
+  </div>
+
+  <script>
+    const addToCartBtn = document.getElementById('addToCart');
+    const cart = document.getElementById('cart');
+    const quantitySpan = document.getElementById('quantity');
+    const totalSpan = document.getElementById('total');
+    let quantity = 1;
+    const price = 100;
+
+    addToCartBtn.addEventListener('click', () => {
+      cart.classList.remove('hidden');
+      quantity = 1;
+      quantitySpan.textContent = quantity;
+      totalSpan.textContent = quantity * price;
+    });
+
+    document.getElementById('increase').addEventListener('click', () => {
+      quantity++;
+      quantitySpan.textContent = quantity;
+      totalSpan.textContent = quantity * price;
+    });
+
+    document.getElementById('decrease').addEventListener('click', () => {
+      if (quantity > 1) {
+        quantity--;
+        quantitySpan.textContent = quantity;
+        totalSpan.textContent = quantity * price;
+      }
+    });
+  </script>
+</body>
+</html>

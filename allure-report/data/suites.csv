@@ -1,0 +1,6 @@
+"DESCRİPTİON","DURATİON İN MS","NAME","PARENT SUİTE","START TİME","STATUS","STOP TİME","SUB SUİTE","SUİTE","TEST CLASS","TEST METHOD"
+"","224","Kampanya fiyatı tüm adımlarda doğru görüntülenir","","Sun May 18 17:58:21 GMT+03:00 2025","passed","Sun May 18 17:58:22 GMT+03:00 2025","","Kampanyalı Ürün Fiyat Kontrol Testi","",""
+"","181","Fiyat güncellemesi doğru şekilde yansıtılır","","Sun May 18 17:58:27 GMT+03:00 2025","passed","Sun May 18 17:58:27 GMT+03:00 2025","","Fiyat Güncelleme Uyarı Sistemi Testi","",""
+"","881","Geçerli ve geçersiz indirim kodu test edilir","","Sun May 18 17:58:23 GMT+03:00 2025","passed","Sun May 18 17:58:24 GMT+03:00 2025","","İndirim Kodu Uygulama ve Geçersiz Kod Durumu","",""
+"","258","100 TL üzeri alışverişte kargo bedava mesajı görünür","","Sun May 18 17:58:25 GMT+03:00 2025","passed","Sun May 18 17:58:26 GMT+03:00 2025","","Ücretsiz Kargo Şartları Testi","",""
+"","181","Ürün sepete eklenir ve adet arttırılır","","Sun May 18 17:58:28 GMT+03:00 2025","passed","Sun May 18 17:58:28 GMT+03:00 2025","","Sepet Ürün Adedi Güncelleme (Yerel Test Sayfası)","",""

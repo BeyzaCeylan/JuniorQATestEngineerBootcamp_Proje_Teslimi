@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiyat Uyarı Testi</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    #cart { margin-top: 30px; border: 1px solid #ccc; padding: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Test Ürünü</h1>
+  <p>Ürün: Kulaklık</p>
+  <p>Fiyat: <span id="price">150</span> TL</p>
+  <button id="addToCart">Sepete Ekle</button>
+
+  <div id="cart" style="display:none;">
+    <h2>Sepet</h2>
+    <p>Ürün: Kulaklık</p>
+    <p>Fiyat: <span id="cartPrice">150</span> TL</p>
+    <button id="simulateBackend">Fiyatı Backend'den Güncelle</button>
+  </div>
+
+  <script>
+    document.getElementById("addToCart").addEventListener("click", () => {
+      document.getElementById("cart").style.display = "block";
+    });
+
+    document.getElementById("simulateBackend").addEventListener("click", () => {
+      // Backend değişikliği simülasyonu
+      document.getElementById("cartPrice").innerText = "180";
+    });
+  </script>
+
+</body>
+</html>

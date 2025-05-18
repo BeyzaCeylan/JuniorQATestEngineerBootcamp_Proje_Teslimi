@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İndirim Kodu Test Sayfası</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .hidden { display: none; color: red; }
+  </style>
+</head>
+<body>
+  <h1>Ürün Detay Sayfası</h1>
+  <p>Ürün: Kitap</p>
+  <p>Fiyat: 50 TL</p>
+  <button id="addToCart">Sepete Ekle</button>
+
+  <div id="cart" class="hidden">
+    <p>Ürün Sepete Eklendi</p>
+    <p>Adet: <span id="quantity">1</span></p>
+    <p>Toplam: <span id="total">50</span> TL</p>
+    <br />
+    <button id="showCoupon">Kupon Kodu Ekle</button>
+
+    <div id="couponArea" class="hidden">
+      <input id="couponInput" type="text" placeholder="Kupon kodu girin" />
+      <button id="applyCoupon">Uygula</button>
+      <p id="couponResult" class="hidden"></p>
+    </div>
+  </div>
+
+  <script>
+    const addToCartBtn = document.getElementById('addToCart');
+    const cart = document.getElementById('cart');
+    const quantity = document.getElementById('quantity');
+    const total = document.getElementById('total');
+    const showCouponBtn = document.getElementById('showCoupon');
+    const couponArea = document.getElementById('couponArea');
+    const applyCouponBtn = document.getElementById('applyCoupon');
+    const couponInput = document.getElementById('couponInput');
+    const couponResult = document.getElementById('couponResult');
+
+    addToCartBtn.addEventListener('click', () => {
+      cart.classList.remove('hidden');
+    });
+
+    showCouponBtn.addEventListener('click', () => {
+      couponArea.classList.remove('hidden');
+    });
+
+    applyCouponBtn.addEventListener('click', () => {
+      const code = couponInput.value.trim();
+      if (code === 'INDIRIM10') {
+        total.textContent = '40';
+        couponResult.textContent = '10 TL indirim uygulandı!';
+        couponResult.classList.remove('hidden');
+        couponResult.style.color = 'green';
+      } else {
+        couponResult.textContent = 'Bu indirim kodu geçersiz';
+        couponResult.classList.remove('hidden');
+        couponResult.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
